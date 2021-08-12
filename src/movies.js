@@ -1,19 +1,65 @@
 // Iteration 1: All directors? - Get the array of all directors.
 // _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors.
+
+const movies = require("./data");
+
 // How could you "clean" a bit this array and make it unified (without duplicates)?
-function getAllDirectors() {}
+function getAllDirectors(movies) {
+  const directorsArr = movies.map (function(element){
+    return element.director
+  })
+  return directorsArr;
+}
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
-function howManyMovies() {}
+function howManyMovies(movies) {
+  const stevenSpielbergMovies = movies.filter(function(element){
+    if (element.director === 'Steven Spielberg' && element.genre.includes('Drama')){
+      return true
+    }
+  })
+  return stevenSpielbergMovies.length;
+}
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
-function scoresAverage() {}
+function scoresAverage(movies) {
+  if (!movies.length){
+    return 0;
+  }
+
+  let totalAverage = movies.reduce((accumalator, currentValue)=>{
+    if (currentValue.score){
+      return accumalator + currentValue.score;
+    }else{
+      return accumalator;
+    }
+  }, 0);
+
+  return Number((totalAverage / movies.length).toFixed(2))
+}
+
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
-function dramaMoviesScore() {}
+
+  function dramaMoviesScore(movies) {
+    if (!movies.length){
+      return 0;
+    }
+    let dramaMovies = movies.filter(function(eachMovie){
+      return eachMovie.genre.includes('Drama')
+    })
+    return scoresAverage(dramaMovies)
+  }
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 function orderByYear() {}
+////   moviesArray.sort(function(latestYear, OldestYear) {
+//     if (latestYear.year) < OldestYear.year) {
+//       return 1
+//     } else if (latestYear.year) > OldestYear.year) {
+//       return -1
+//     } 
+// }
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 function orderAlphabetically() {}

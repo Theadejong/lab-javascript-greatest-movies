@@ -124,7 +124,7 @@ Again, rounded to 2 decimals!
 We need to sort the movies in ascending order by their release year. This should be easy using one of the **methods** we have just learned. :wink:
 Create a function `orderByYear()` that receives an array as parameter and returns a _new sorted array_.
 
-![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_3db351079827c0acba42cf1e397dd8a3.gif)
+![](https://s3-eu-west-1.amazonaws.com/ih-materia ls/uploads/upload_3db351079827c0acba42cf1e397dd8a3.gif)
 
 If two movies have the same year, order them in alphabetical order by their title! :heavy_check_mark:
 
